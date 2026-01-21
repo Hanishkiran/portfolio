@@ -164,6 +164,13 @@ body {
     color: var(--primary-blue);
 }
 
+.inline-logo {
+    height: 1em;
+    width: auto;
+    vertical-align: -0.12em;
+    margin-left: 0.35rem;
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
@@ -268,6 +275,7 @@ body {
     border-radius: 50%;
     display: block;
 }
+
 
 /* Section Styles */
 section {
