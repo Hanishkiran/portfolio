@@ -6,31 +6,53 @@
 }
 
 :root {
-    --primary-blue: #1e3a8a;
-    --navy: #0f172a;
-    --charcoal: #1e293b;
-    --light-blue: #3b82f6;
-    --accent-blue: #60a5fa;
-    --white: #ffffff;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+    --brand-primary: #EE2238;
+    --brand-ink: #1E1E1E;
+    --brand-white: #FFFFFF;
+    --brand-gray: #F2F2F2;
+    --brand-green: #00EB84;
+    --brand-purple: #A188EF;
+    --brand-yellow: #F4C042;
+    --brand-blue: #4CA8E7;
+
+    --primary-blue: var(--brand-primary);
+    --navy: var(--brand-ink);
+    --charcoal: var(--brand-ink);
+    --light-blue: var(--brand-blue);
+    --accent-blue: var(--brand-blue);
+    --white: var(--brand-white);
+    --gray-100: var(--brand-gray);
+    --gray-200: #E6E6E6;
+    --gray-300: #D1D1D1;
+    --gray-600: #5C5C5C;
+    --gray-700: #3D3D3D;
+    --gray-800: var(--brand-ink);
+    --text-primary: var(--brand-ink);
+    --text-secondary: #5C5C5C;
     --max-width: 1200px;
     --border-radius: 8px;
     --transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: var(--font-body);
+    font-weight: 400;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--white);
     overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
 }
 
 .container {
@@ -76,7 +98,7 @@ body {
 .nav-menu a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
     position: relative;
 }
@@ -145,7 +167,7 @@ body {
     line-height: 1.2; 
     
     /* Optional: Change the color to be slightly less prominent */
-    color: #000000; /* A subtle grey, if needed */
+    color: var(--text-primary); /* A subtle grey, if needed */
 }
 
 .hero-title .blue-text {
@@ -204,7 +226,7 @@ body {
 .btn-primary:hover {
     background: var(--navy);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+    box-shadow: 0 4px 12px rgba(238, 34, 56, 0.3);
 }
 
 .btn-secondary {
@@ -258,10 +280,10 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+    box-shadow: 0 10px 30px rgba(238, 34, 56, 0.2);
     overflow: hidden;
     position: relative;
 }
@@ -273,14 +295,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 65%;
+    transform: translateX(-6%) scale(1.12);
+    transform-origin: center;
     border-radius: 50%;
     display: block;
 }
 
-
 /* Section Styles */
 section {
     padding: 5rem 0;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(238, 34, 56, 0.35) 50%, transparent 100%);
+    margin: 3rem 0;
 }
 
 /* Company Logos Carousel */
@@ -495,7 +526,32 @@ section {
     padding: 0.375rem 0.75rem;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.case-study-tags .tag {
+    color: var(--text-primary);
+    border: 1px solid transparent;
+}
+
+.case-study-tags .tag:nth-child(4n + 1) {
+    background: rgba(76, 168, 231, 0.14);
+    border-color: rgba(76, 168, 231, 0.30);
+}
+
+.case-study-tags .tag:nth-child(4n + 2) {
+    background: rgba(161, 136, 239, 0.14);
+    border-color: rgba(161, 136, 239, 0.30);
+}
+
+.case-study-tags .tag:nth-child(4n + 3) {
+    background: rgba(244, 192, 66, 0.18);
+    border-color: rgba(244, 192, 66, 0.34);
+}
+
+.case-study-tags .tag:nth-child(4n) {
+    background: rgba(0, 235, 132, 0.14);
+    border-color: rgba(0, 235, 132, 0.30);
 }
 
 /* Skills Section */
@@ -529,7 +585,7 @@ section {
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -743,7 +799,7 @@ section {
     gap: 0.5rem;
     color: var(--primary-blue);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 2rem;
     transition: var(--transition);
 }
@@ -887,7 +943,7 @@ section {
     font-size: 1.125rem;
     color: var(--text-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .contact-item a:hover {
@@ -907,7 +963,7 @@ section {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -926,7 +982,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    box-shadow: 0 0 0 3px rgba(238, 34, 56, 0.1);
 }
 
 .form-group textarea {
